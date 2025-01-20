@@ -105,4 +105,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      #set GitHub CLI to handle credentials 
+      credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
+    };
+  };
+
 }
