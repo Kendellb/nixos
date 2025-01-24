@@ -54,7 +54,7 @@
   users.users.kendell = {
     isNormalUser = true;
     description = "kendell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [];
   };
 
@@ -71,6 +71,8 @@
     tmux
     firefox
     git
+    brightnessctl
+    tailscale
   ];
   
   home-manager = {
@@ -108,12 +110,20 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   #Enabling Zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+  enable = true;
+  enableAutosuggestions = true;
+  ohMyZsh.enable = true;
+  syntaxHighlighting.enable = true;
+  };
   #Enabling zsh for all users
   users.defaultUserShell = pkgs.zsh;
 
   #Nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
+  #Systemd tailscale
+  services.tailscale.enable = true;
+
 
 }

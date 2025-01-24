@@ -37,7 +37,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.freshfetch #neofetch alt
-    pkgs.polybar #bar for i3
+    #pkgs.polybar #bar for i3
     pkgs.neovim
     pkgs.inconsolata-nerdfont
     pkgs.yadm

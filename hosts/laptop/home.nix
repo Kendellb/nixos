@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -37,7 +37,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.freshfetch #neofetch alt
-    pkgs.polybar #bar for i3
     pkgs.neovim
     pkgs.inconsolata-nerdfont
     pkgs.yadm
@@ -60,12 +59,31 @@
     pkgs.lua-language-server
     pkgs.chezmoi
     pkgs.gh #GitHub CLI
+    pkgs.cava
+    pkgs.picom
+    pkgs.ncdu
+    pkgs.pulseaudioFull
   ];
   
   #Enable Cattppuccin globally
   catppuccin.flavor = "frappe";
   catppuccin.enable = true;
   
+  #starship
+#  programs.starship = {
+#    enable = true;
+#    # Configuration written to ~/.config/starship.toml
+#    settings = {
+#      # add_newline = false;
+#
+#      # character = {
+#      #   success_symbol = "[➜](bold green)";
+#      #   error_symbol = "[➜](bold red)";
+#      # };
+#
+#      # package.disabled = true;
+#    };
+#  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -111,6 +129,11 @@
       #set GitHub CLI to handle credentials 
       credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
     };
+      userEmail = "92357397+Kendellb@users.noreply.github.com";
+      userName = "kendell";
   };
+
+
+
 
 }
