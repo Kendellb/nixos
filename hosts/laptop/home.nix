@@ -74,6 +74,7 @@
     pkgs.xfce.thunar
     pkgs.vlc
     pkgs.zathura
+    pkgs.dunst
 
     # Fonts
     pkgs.inconsolata-nerdfont
