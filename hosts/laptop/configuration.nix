@@ -147,4 +147,7 @@
     options = "--delete-older-than 10d";
   };
   nix.settings.auto-optimise-store = true;
+
+  #Enabling notify-send dbus
+  services.systembus-notify.enable = true;
 }
