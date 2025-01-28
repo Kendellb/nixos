@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kendell";
@@ -36,54 +39,86 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.freshfetch #neofetch alt
-    pkgs.neovim
-    pkgs.inconsolata-nerdfont
-    pkgs.yadm
+    # System & Package Management
+    pkgs.chezmoi
+
+    # Shell & Terminal Utilities
+    pkgs.freshfetch
     pkgs.rofi
+    pkgs.xclip
+    pkgs.starship
+    pkgs.cowsay
+    pkgs.xplr
+    pkgs.cava
+
+    # Text Editing & Development Tools
+    pkgs.neovim
+    pkgs.vimPlugins.packer-nvim
+    pkgs.lua
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.java-language-server
+    pkgs.go
+    pkgs.lua-language-server
+    pkgs.nixfmt-rfc-style
+    pkgs.nil
+    pkgs.alejandra
+
+    # System & Utility Software
     pkgs.gnupg
     pkgs.pass
     pkgs.feh
-    pkgs.starship
-    pkgs.xclip
-    pkgs.vimPlugins.packer-nvim
-    pkgs.libreoffice-qt6-fresh
-    pkgs.gnumake
-    pkgs.lua
-    pkgs.gcc
-    pkgs.java-language-server
-    pkgs.go
-    pkgs.openjdk
     pkgs.tree
-    pkgs.xplr
-    pkgs.lua-language-server
-    pkgs.chezmoi
-    pkgs.gh #GitHub CLI
-    pkgs.cava
-    pkgs.picom
     pkgs.ncdu
+    pkgs.xfce.thunar
+    pkgs.vlc
+    pkgs.zathura
+
+    # Fonts
+    pkgs.inconsolata-nerdfont
+
+    # Multimedia & Audio
     pkgs.pulseaudioFull
+    pkgs.picom
+
+    # Version Control & GitHub Integration
+    pkgs.gh
+
+    # Office & Productivity
+    pkgs.libreoffice-qt6-fresh
+
+    # Miscellaneous
+    pkgs.vesktop
   ];
-  
+
   #Enable Cattppuccin globally
-  catppuccin.flavor = "frappe";
-  catppuccin.enable = true;
-  
-  #starship
-#  programs.starship = {
-#    enable = true;
-#    # Configuration written to ~/.config/starship.toml
-#    settings = {
-#      # add_newline = false;
-#
-#      # character = {
-#      #   success_symbol = "[➜](bold green)";
-#      #   error_symbol = "[➜](bold red)";
-#      # };
-#
-#      # package.disabled = true;
-#    };
-#  };
+  catppuccin = {
+    enable = true;
+    flavor = "frappe";
+    gtk = {
+      enable = true;
+      flavor = "frappe";
+    };
+    cursors = {
+      enable = true;
+    };
+  };
+
+  qt = {
+    enable = true;
+
+    platformTheme.name = "kvantum";
+    style = {
+      name = "kvantum";
+
+      catppuccin = {
+        enable = true;
+
+        flavor = "frappe";
+        accent = "lavender";
+      };
+    };
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -117,7 +152,7 @@
   #  /etc/profiles/per-user/kendell/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -126,14 +161,12 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      #set GitHub CLI to handle credentials 
+      #set GitHub CLI to handle credentials
       credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
     };
-      userEmail = "92357397+Kendellb@users.noreply.github.com";
-      userName = "kendell";
+    userEmail = "92357397+Kendellb@users.noreply.github.com";
+    userName = "kendell";
   };
 
-
-
-
+  xsession.numlock.enable = true;
 }

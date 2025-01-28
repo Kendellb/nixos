@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kendell";
@@ -61,11 +63,10 @@
     pkgs.chezmoi
     pkgs.gh #GitHub CLI
   ];
-  
+
   #Enable Cattppuccin globally
   catppuccin.flavor = "frappe";
   catppuccin.enable = true;
-  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -99,7 +100,7 @@
   #  /etc/profiles/per-user/kendell/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -108,9 +109,8 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      #set GitHub CLI to handle credentials 
+      #set GitHub CLI to handle credentials
       credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
     };
   };
-
 }

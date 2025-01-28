@@ -1,19 +1,22 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/nixos/i3.nix 
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/nixos/i3.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable= true;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kendell-hpenvyx360convertible15mee0xxx"; # Define your hostname.
@@ -54,8 +57,12 @@
   users.users.kendell = {
     isNormalUser = true;
     description = "kendell";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+    ];
+    #packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -74,12 +81,12 @@
     brightnessctl
     tailscale
   ];
-  
+
   home-manager = {
-   extraSpecialArgs = { inherit inputs; };
-   users = {
- 	"kendell" = import ./home.nix;
-   };
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "kendell" = import ./home.nix;
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -93,7 +100,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -111,19 +118,33 @@
 
   #Enabling Zsh
   programs.zsh = {
-  enable = true;
-  enableAutosuggestions = true;
-  ohMyZsh.enable = true;
-  syntaxHighlighting.enable = true;
+    enable = true;
+    enableAutosuggestions = true;
+    ohMyZsh.enable = true;
+    syntaxHighlighting.enable = true;
   };
   #Enabling zsh for all users
   users.defaultUserShell = pkgs.zsh;
 
   #Nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  #Systemd tailscale
   services.tailscale.enable = true;
 
+  #Automatic updating
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+  };
 
+  #Automatic cleanup
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 10d";
+  };
+  nix.settings.auto-optimise-store = true;
 }

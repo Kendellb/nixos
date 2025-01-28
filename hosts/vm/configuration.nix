@@ -1,16 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/nixos/i3.nix 
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/nixos/i3.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -55,7 +58,7 @@
   users.users.kendell = {
     isNormalUser = true;
     description = "kendell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
@@ -73,12 +76,12 @@
     firefox
     git
   ];
-  
+
   home-manager = {
-   extraSpecialArgs = { inherit inputs; };
-   users = {
- 	"kendell" = import ./home.nix;
-   };
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "kendell" = import ./home.nix;
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -92,7 +95,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -114,7 +117,5 @@
   users.defaultUserShell = pkgs.zsh;
 
   #Nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }
