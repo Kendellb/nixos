@@ -50,6 +50,7 @@
     pkgs.cowsay
     pkgs.xplr
     pkgs.cava
+    pkgs.libnotify
 
     # Text Editing & Development Tools
     pkgs.neovim
