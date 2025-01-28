@@ -172,6 +172,7 @@
 
   xsession.numlock.enable = true;
 
-  #Enabling notify-send dbus
+  #Enabling notify-send dbus and dunst dameon
   services.systembus-notify.enable = true;
+  services.dunst.enable = true;
 }
