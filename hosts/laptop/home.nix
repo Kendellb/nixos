@@ -170,4 +170,7 @@
   };
 
   xsession.numlock.enable = true;
+
+  #Enabling notify-send dbus
+  services.systembus-notify.enable = true;
 }
