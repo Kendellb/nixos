@@ -2,13 +2,24 @@ warning: Git tree '/home/kendell/nixos' is dirty
 building the system configuration...
 warning: Git tree '/home/kendell/nixos' is dirty
 evaluation warning: inconsolata-nerdfont is redundant. Use nerd-fonts.inconsolata instead.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/home.nix' and `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/home.nix' and `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/home.nix' and `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
-evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
-evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/f61hg1v4gnndbsws794k4hcsbsdhx0qy-source/hosts/desktop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/home.nix' and `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/home.nix' and `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/home.nix' and `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
+evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
+evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/9w4g5fmvrcvk0mvhlznzzxgz3szs8fiq-source/hosts/desktop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
+these 5 derivations will be built:
+  /nix/store/c8ggy4623j9b5y3dfs233w2l75i1adlf-xserver.conf.drv
+  /nix/store/7gngkqgmb4fs8gi8xkvp1qdvxif7f340-xserver-wrapper.drv
+  /nix/store/h4kx2ps8gblnx1dksq50fabf9xr9njia-lightdm.conf.drv
+  /nix/store/rrxv5il04kw8qabdcmy40kmbsvgf3kk6-etc.drv
+  /nix/store/ayryrs398rn50ms80xxwwxf1vhjqzyvn-nixos-system-Arc-170-25.05.20250112.ed4a395.drv
+building '/nix/store/c8ggy4623j9b5y3dfs233w2l75i1adlf-xserver.conf.drv'...
+building '/nix/store/7gngkqgmb4fs8gi8xkvp1qdvxif7f340-xserver-wrapper.drv'...
+building '/nix/store/h4kx2ps8gblnx1dksq50fabf9xr9njia-lightdm.conf.drv'...
+building '/nix/store/rrxv5il04kw8qabdcmy40kmbsvgf3kk6-etc.drv'...
+building '/nix/store/ayryrs398rn50ms80xxwwxf1vhjqzyvn-nixos-system-Arc-170-25.05.20250112.ed4a395.drv'...
 activating the configuration...
 setting up /etc...
 reloading user units for kendell...
 restarting sysinit-reactivation.target
-the following new units were started: NetworkManager-dispatcher.service
+the following new units were started: NetworkManager-dispatcher.service, run-credentials-systemd\x2dtmpfiles\x2dresetup.service.mount, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
