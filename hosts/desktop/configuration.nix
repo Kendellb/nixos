@@ -154,35 +154,35 @@
   };
   nix.settings.auto-optimise-store = true;
 
-  programs.firefox.policies = {
-    DisableTelemetry = true;
-    DisableFirefoxStudies = true;
-    EnableTrackingProtection = {
-      Value = true;
-      Locked = true;
-      Cryptomining = true;
-      Fingerprinting = true;
-    };
-    ExtensionSettings = with builtins; let
-      extension = shortId: uuid: {
-        name = uuid;
-        value = {
-          install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
-          installation_mode = "normal_installed";
-        };
-      };
-    in
-      listToAttrs [
-        (extension "ublock-origin" "uBlock0@raymondhill.net")
-        (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
-        (extension "firefoxcolor" "FirefoxColor@mozilla.com")
-        (extension "cattppuccin-frappe-lavender" "{5ee380f7-abda-467c-ae9a-d30bf8f0d1d6}")
-        (extension "custom-new-page" "custom-new-tab-page@mint.as")
-      ];
-    # To add additional extensions, find it on addons.mozilla.org, find
-    # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
-    # Then, download the XPI by filling it in to the install_url template, unzip it,
-    # run `jq .browser_specific_settings.gecko.id manifest.json` or
-    # `jq .applications.gecko.id manifest.json` to get the UUID
-  };
+  #  programs.firefox.policies = {
+  #    DisableTelemetry = true;
+  #    DisableFirefoxStudies = true;
+  #    EnableTrackingProtection = {
+  #      Value = true;
+  #      Locked = true;
+  #      Cryptomining = true;
+  #      Fingerprinting = true;
+  #    };
+  #    ExtensionSettings = with builtins; let
+  #      extension = shortId: uuid: {
+  #        name = uuid;
+  #        value = {
+  #          install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+  #          installation_mode = "normal_installed";
+  #        };
+  #      };
+  #    in
+  #      listToAttrs [
+  #        (extension "ublock-origin" "uBlock0@raymondhill.net")
+  #        (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+  #        (extension "firefoxcolor" "FirefoxColor@mozilla.com")
+  #        (extension "cattppuccin-frappe-lavender" "{5ee380f7-abda-467c-ae9a-d30bf8f0d1d6}")
+  #        (extension "custom-new-page" "custom-new-tab-page@mint.as")
+  #      ];
+  #    # To add additional extensions, find it on addons.mozilla.org, find
+  #    # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
+  #    # Then, download the XPI by filling it in to the install_url template, unzip it,
+  #    # run `jq .browser_specific_settings.gecko.id manifest.json` or
+  #    # `jq .applications.gecko.id manifest.json` to get the UUID
+  #  };
 }
