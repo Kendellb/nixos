@@ -163,13 +163,14 @@
 
   programs.git = {
     enable = true;
-    extraConfig = {
-      #set GitHub CLI to handle credentials
-      credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
-    };
+    # extraConfig = {
+    #   #set GitHub CLI to handle credentials
+    #   credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
+    # };
     userEmail = "92357397+Kendellb@users.noreply.github.com";
     userName = "kendell";
   };
+  programs.gh.gitCredentialHelper.enable = true;
 
   xsession.numlock.enable = true;
 
