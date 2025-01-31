@@ -165,7 +165,7 @@
     enable = true;
     extraConfig = {
       #set GitHub CLI to handle credentials
-      credential.helper = "/home/kendell/.nix-profile/bin/gh auth git-credential";
+      credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
     };
     userEmail = "92357397+Kendellb@users.noreply.github.com";
     userName = "kendell";
