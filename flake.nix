@@ -53,6 +53,23 @@
           }
         ];
       };
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/desktop/configuration.nix
+          inputs.home-manager.nixosModules.default
+          catppuccin.nixosModules.catppuccin
+
+          {
+            home-manager.users.kendell = {
+              imports = [
+                ./hosts/desktop/home.nix
+                catppuccin.homeManagerModules.catppuccin
+              ];
+            };
+          }
+        ];
+      };
     };
   };
 }

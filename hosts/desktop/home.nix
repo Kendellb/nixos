@@ -175,4 +175,12 @@
   #Enabling notify-send dbus and dunst dameon
   services.systembus-notify.enable = true;
   services.dunst.enable = true;
+
+  home.activation.chezmoi = lib.hm.dag.entryAfter ["installPackages"] ''
+    PATH="${pkgs.chezmoi}/bin:${pkgs.git}/bin:${pkgs.git-lfs}/bin:''${PATH}"
+
+    $DRY_RUN_CMD chezmoi init https://github.com/Kendellb/dotfiles.git
+    $DRY_RUN_CMD chezmoi update -a
+    $DRY_RUN_CMD chezmoi git status
+  '';
 }

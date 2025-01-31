@@ -1,12 +1,14 @@
+warning: Git tree '/home/kendell/nixos' is dirty
 building the system configuration...
+warning: Git tree '/home/kendell/nixos' is dirty
 evaluation warning: inconsolata-nerdfont is redundant. Use nerd-fonts.inconsolata instead.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/home.nix' and `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/home.nix' and `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/home.nix' and `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
-evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
-evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/prz7sp7w2chdzkgzkyry2nxd353hphjx-source/hosts/laptop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/home.nix' and `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/home.nix' and `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/home.nix' and `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
+evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
+evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/m7y0fgrz8p5yjy0pklxhiia1pjkmwmpq-source/hosts/desktop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
 activating the configuration...
 setting up /etc...
 reloading user units for kendell...
 restarting sysinit-reactivation.target
-the following new units were started: NetworkManager-dispatcher.service
+the following new units were started: NetworkManager-dispatcher.service, run-credentials-systemd\x2dtmpfiles\x2dresetup.service.mount, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
