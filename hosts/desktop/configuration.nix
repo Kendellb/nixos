@@ -19,7 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "kendell-hpenvyx360convertible15mee0xxx"; # Define your hostname.
+  networking.hostName = "Arc-170"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -30,7 +30,7 @@
   networking.networkmanager.enable = true;
 
   #mount home partition
-  fileSystem."/home"={
+  fileSystems."/home"={
 	device="/dev/nvme0n1p3";
 	fsType="ext4";
   };
