@@ -13,6 +13,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = {
@@ -69,6 +70,7 @@
               imports = [
                 ./hosts/desktop/home.nix
                 catppuccin.homeManagerModules.catppuccin
+                ./modules/home-manager/spicetify.nix
               ];
             };
           }
