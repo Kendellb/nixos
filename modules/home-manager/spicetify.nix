@@ -12,6 +12,8 @@ in {
     enable = true;
     #theme = spicePkgs.themes.starryNight;
     enabledExtensions = with spicePkgs.extensions; [
+      shuffle
+      fullAppDisplay
       adblock
       powerBar
       trashbin
