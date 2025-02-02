@@ -76,6 +76,7 @@
     pkgs.vlc
     pkgs.zathura
     pkgs.dunst
+    pkgs.gvfs
 
     # Fonts
     pkgs.inconsolata-nerdfont
