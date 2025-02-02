@@ -98,6 +98,7 @@
     git
     brightnessctl
     tailscale
+    gvfs
   ];
 
   home-manager = {
@@ -197,4 +198,6 @@
   #    # run `jq .browser_specific_settings.gecko.id manifest.json` or
   #    # `jq .applications.gecko.id manifest.json` to get the UUID
   #  };
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 }

@@ -76,7 +76,6 @@
     pkgs.vlc
     pkgs.zathura
     pkgs.dunst
-    pkgs.gvfs
 
     # Fonts
     pkgs.inconsolata-nerdfont
@@ -186,9 +185,6 @@
     $DRY_RUN_CMD chezmoi update -a
     $DRY_RUN_CMD chezmoi git status
   '';
-
-  #  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  #  services.tumbler.enable = true; # Thumbnail support for images
 
   #  programs.firefox = {
   #    enable = true;
