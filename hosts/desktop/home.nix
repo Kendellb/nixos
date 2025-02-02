@@ -187,6 +187,9 @@
     $DRY_RUN_CMD chezmoi git status
   '';
 
+  #  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  #  services.tumbler.enable = true; # Thumbnail support for images
+
   #  programs.firefox = {
   #    enable = true;
   #    profiles.kendell = {
