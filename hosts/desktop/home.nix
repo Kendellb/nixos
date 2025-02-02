@@ -93,7 +93,6 @@
 
     # Miscellaneous
     pkgs.vesktop
-    pkgs.spotify
   ];
 
   #Enable Cattppuccin globally

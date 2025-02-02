@@ -1,31 +1,24 @@
 {
-  config,
-  lib,
   inputs,
   pkgs,
   ...
 }: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  inherit (inputs) spicetify-nix;
 in {
-  options.programs.spicetify = {
-    enable = lib.mkEnableOption "Enable Spicetify configuration";
-    enabledExtensions = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = ["adblockify" "hidePodcasts" "shuffle"];
-      description = "List of enabled Spicetify extensions.";
-    };
-    colorScheme = lib.mkOption {
-      type = lib.types.str;
-      default = "mocha";
-      description = "Spicetify color scheme.";
-    };
-  };
-
-  config = lib.mkIf config.programs.spicetify.enable {
-    programs.spicetify = {
-      enable = true;
-      enabledExtensions = with spicePkgs.extensions; config.programs.spicetify.enabledExtensions;
-      colorScheme = config.programs.spicetify.colorScheme;
-    };
+  imports = [spicetify-nix.homeManagerModules.default];
+  programs.spicetify = let
+    spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
+  in {
+    enable = true;
+    #theme = spicePkgs.themes.starryNight;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      powerBar
+      trashbin
+      loopyLoop
+      popupLyrics
+      playlistIcons
+      keyboardShortcut
+    ];
   };
 }
