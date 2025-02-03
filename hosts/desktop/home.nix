@@ -73,7 +73,6 @@
     pkgs.feh
     pkgs.tree
     pkgs.ncdu
-    pkgs.xfce.thunar
     pkgs.xfce.xfconf
     pkgs.vlc
     pkgs.zathura
