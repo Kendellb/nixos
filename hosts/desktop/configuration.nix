@@ -72,6 +72,7 @@
   ];
 
   services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.package = pkgs.kdePackages.sddm;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kendell = {
@@ -213,5 +214,4 @@
     enable = true;
     font = "inconsolata-nerdfont";
   };
-  services.displayManager.sddm.catppuccin.assertQt6Sddm = false;
 }
