@@ -102,6 +102,7 @@
     flavor = "frappe";
     gtk = {
       enable = true;
+      flavor = "frappe";
     };
     cursors = {
       enable = true;
