@@ -93,6 +93,7 @@
 
     # Miscellaneous
     pkgs.vesktop
+    pkgs.btop
   ];
 
   #Enable Cattppuccin globally
@@ -101,14 +102,15 @@
     flavor = "frappe";
     gtk = {
       enable = true;
-      flavor = "frappe";
     };
     cursors = {
       enable = true;
     };
     spotify-player = {
       enable = true;
-      flavor = "frappe";
+    };
+    btop = {
+      enable = true;
     };
   };
 

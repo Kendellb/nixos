@@ -71,6 +71,8 @@
     }
   ];
 
+  services.xserver.displayManager.sddm.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kendell = {
     isNormalUser = true;
@@ -189,7 +191,7 @@
   #        (extension "ublock-origin" "uBlock0@raymondhill.net")
   #        (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
   #        (extension "firefoxcolor" "FirefoxColor@mozilla.com")
-  #        (extension "cattppuccin-frappe-lavender" "{5ee380f7-abda-467c-ae9a-d30bf8f0d1d6}")
+  #        (extension "catppuccin-frappe-lavender" "{5ee380f7-abda-467c-ae9a-d30bf8f0d1d6}")
   #        (extension "custom-new-page" "custom-new-tab-page@mint.as")
   #      ];
   #    # To add additional extensions, find it on addons.mozilla.org, find
@@ -207,4 +209,9 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+  catppuccin.sddm = {
+    enable = true;
+    font = "inconsolata-nerdfont";
+  };
+  services.displayManager.sddm.catppuccin.assertQt6Sddm = false;
 }
