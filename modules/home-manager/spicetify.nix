@@ -10,7 +10,8 @@ in {
     spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
-    #theme = spicePkgs.themes.starryNight;
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "frappe";
     enabledExtensions = with spicePkgs.extensions; [
       shuffle
       fullAppDisplay
