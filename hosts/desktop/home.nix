@@ -108,9 +108,11 @@
     };
     spotify-player = {
       enable = true;
+      flavor = "frappe";
     };
     btop = {
       enable = true;
+      flavor = "frappe";
     };
   };
 
