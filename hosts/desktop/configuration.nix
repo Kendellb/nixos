@@ -82,7 +82,12 @@
       "wheel"
       "audio"
     ];
-    #packages = with pkgs; [];
+    packages = with pkgs; [
+      gvfs
+      mangohud #for steam
+      protonup #for steam
+      prismlauncher #foss minecraft launcher
+    ];
   };
 
   # Allow unfree packages
@@ -100,9 +105,6 @@
     git
     brightnessctl
     tailscale
-    gvfs
-    mangohud #for steam
-    protonup #for steam
   ];
 
   home-manager = {
