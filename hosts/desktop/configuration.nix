@@ -71,7 +71,7 @@
     }
   ];
 
-  services.xserver.displayManager.lightdm.greeters.slick.iconTheme.name = "Adwaita";
+  services.xserver.displayManager.lightdm.greeters.slick.theme.name = "Adwaita";
   services.xserver.displayManager.lightdm.greeters.slick.font.name = "inconsolata-nerdfont";
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kendell = {
