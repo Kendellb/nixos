@@ -236,4 +236,6 @@
   #      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   #    '';
   #  };
+
+  xdg.mime.defaultApplications."inode/directory" = "thunar.desktop";
 }
