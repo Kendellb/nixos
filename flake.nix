@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
@@ -14,12 +15,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
     self,
     nixpkgs,
     catppuccin,
+    nix-flatpak,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -70,6 +74,7 @@
                 ./hosts/desktop/home.nix
                 catppuccin.homeManagerModules.catppuccin
                 ./modules/home-manager/spicetify.nix
+                nix-flatpak.homeManagerModules.nix-flatpak
               ];
             };
           }
