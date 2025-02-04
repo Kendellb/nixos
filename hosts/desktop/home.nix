@@ -96,6 +96,7 @@
     pkgs.vesktop
     pkgs.btop
     pkgs.CuboCore.coreshot #x11
+    pkgs.unzip
   ];
 
   #Enable Cattppuccin globally
