@@ -239,4 +239,9 @@
 
   #make thunar default app for opening directories
   xdg.mime.defaultApplications."inode/directory" = "thunar.desktop";
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }
