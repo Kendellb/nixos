@@ -97,6 +97,7 @@
     pkgs.btop
     pkgs.CuboCore.coreshot #x11
     pkgs.unzip
+    pkgs.postman
   ];
 
   #Enable Cattppuccin globally
