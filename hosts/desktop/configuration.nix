@@ -63,11 +63,19 @@
     {
       output = "DP-2";
       primary = true;
-      monitorConfig = "Option \"Mode\" \"1920x1080\" Option \"Rate\" \"144\" Option \"Rotate\" \"normal\"";
+      monitorConfig = ''
+        Option "Mode" "1920x1080"
+        Option "Rate" "144"
+        Option "Rotate" "normal"
+      '';
     }
     {
       output = "DVI-D-1";
-      monitorConfig = "Option \"Mode\" \"1280x1024\" Option \"Rotate\" \"left\" Option \"RightOf\" \"DP-2\"";
+      monitorConfig = ''
+        Option "Mode" "1280x1024"
+        Option "Rotate" "left"
+        Option "RightOf" "DP-2"
+      '';
     }
   ];
 
