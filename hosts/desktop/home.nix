@@ -260,5 +260,6 @@
   services.flatpak.packages = [
     #{ appId = "com.brave.Browser"; origin = "flathub";  }
     "com.usebottles.bottles"
+    "io.mrarm.mcpelauncher"
   ];
 }
