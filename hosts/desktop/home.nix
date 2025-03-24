@@ -98,6 +98,8 @@
     pkgs.CuboCore.coreshot #x11
     pkgs.unzip
     pkgs.postman
+    pkgs.remmina
+    pkgs.zoom-us
   ];
 
   #Enable Cattppuccin globally
