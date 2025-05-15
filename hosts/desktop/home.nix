@@ -67,6 +67,7 @@
     pkgs.nil
     pkgs.alejandra
     pkgs.jdk8
+    pkgs.jre8
 
     # System & Utility Software
     pkgs.gnupg
