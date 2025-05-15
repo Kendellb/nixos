@@ -66,6 +66,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.nil
     pkgs.alejandra
+    pkgs.jdk8
 
     # System & Utility Software
     pkgs.gnupg
