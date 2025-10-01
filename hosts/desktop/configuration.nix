@@ -78,6 +78,7 @@
   #     '';
   #   }
   # ];
+  services.autorandr.enable = true;
 
   services.xserver.displayManager.lightdm.greeters.slick.theme.name = "Adwaita";
   services.xserver.displayManager.lightdm.greeters.slick.font.name = "inconsolata-nerdfont";
