@@ -223,7 +223,7 @@
             enable = true;
             crtc = 1;
             mode = "1024x1280";
-            rotate = "left";
+            rotate = "inverted";
             rate = "60.00";
           };
         };
