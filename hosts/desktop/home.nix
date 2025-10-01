@@ -200,6 +200,7 @@
           };
           DVI-D-1 = {
             enable = true;
+            position = "1920x0";
             #crtc = 1;
             mode = "1024x1280";
             rotate = "left";
