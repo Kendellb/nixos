@@ -2,11 +2,11 @@ warning: Git tree '/home/kendell/nixos' is dirty
 building the system configuration...
 warning: Git tree '/home/kendell/nixos' is dirty
 evaluation warning: inconsolata-nerdfont is redundant. Use nerd-fonts.inconsolata instead.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/home.nix' and `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/home.nix' and `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
-evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/home.nix' and `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
-evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
-evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/phc30hrmip3vnfgg7kyi9sdnv768k2vx-source/hosts/desktop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.accent' defined in `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/home.nix' and `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.accent'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.flavor' defined in `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/home.nix' and `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.flavor'.
+evaluation warning: kendell profile: The option `qt.style.catppuccin.enable' defined in `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/home.nix' and `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/configuration.nix' has been renamed to `catppuccin.kvantum.enable'.
+evaluation warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/modules/nixos/i3.nix' has been renamed to `services.displayManager.defaultSession'.
+evaluation warning: The option `programs.zsh.enableAutosuggestions' defined in `/nix/store/as4l8f0x9gsafgxwyd6x2nhfjm8ski1j-source/hosts/desktop/configuration.nix' has been renamed to `programs.zsh.autosuggestions.enable'.
 evaluation warning: xdg-desktop-portal 1.17 reworked how portal implementations are loaded, you
                     should either set `xdg.portal.config` or `xdg.portal.configPackages`
                     to specify which portal backend to use for the requested interface.
@@ -17,24 +17,14 @@ evaluation warning: xdg-desktop-portal 1.17 reworked how portal implementations 
                     portal implementation found in lexicographical order, use the following:
 
                     xdg.portal.config.common.default = "*";
-these 6 derivations will be built:
-  /nix/store/06n2yrgcgbz1n7hk2yxayxyz03kakcpn-user-environment.drv
-  /nix/store/g81hp39g7vxqyhm0wy0gvz3bq6yx3dbk-etc-xdg-autorandr-Desktop-config.drv
-  /nix/store/qb3pn9b14whiny710b6xy289kslp858j-etc-xdg-autorandr-Desktop-setup.drv
-  /nix/store/wabmf3q9bskhb2x5cjyswpqy6gxqgqx6-system-units.drv
-  /nix/store/gvfnq1cdn2jc2pmrffm0yr1hdb1n140s-etc.drv
-  /nix/store/k20f4chac3kjbgll4xpdk5075rp543m3-nixos-system-Arc-170-25.05.20250112.ed4a395.drv
-this path will be fetched (0.06 MiB download, 0.37 MiB unpacked):
-  /nix/store/0m8aqz9bgmdf6v1p3m4qd3g17dc5gj4k-arandr-0.1.11
-building '/nix/store/g81hp39g7vxqyhm0wy0gvz3bq6yx3dbk-etc-xdg-autorandr-Desktop-config.drv'...
-building '/nix/store/qb3pn9b14whiny710b6xy289kslp858j-etc-xdg-autorandr-Desktop-setup.drv'...
-building '/nix/store/wabmf3q9bskhb2x5cjyswpqy6gxqgqx6-system-units.drv'...
-copying path '/nix/store/0m8aqz9bgmdf6v1p3m4qd3g17dc5gj4k-arandr-0.1.11' from 'https://cache.nixos.org'...
-building '/nix/store/06n2yrgcgbz1n7hk2yxayxyz03kakcpn-user-environment.drv'...
-building '/nix/store/gvfnq1cdn2jc2pmrffm0yr1hdb1n140s-etc.drv'...
-building '/nix/store/k20f4chac3kjbgll4xpdk5075rp543m3-nixos-system-Arc-170-25.05.20250112.ed4a395.drv'...
+stopping the following units: accounts-daemon.service
 activating the configuration...
 setting up /etc...
+removing obsolete symlink ‘/etc/xdg/autorandr/Desktop/setup’...
+removing obsolete symlink ‘/etc/xdg/autorandr/Desktop/config’...
 reloading user units for kendell...
 restarting sysinit-reactivation.target
-the following new units were started: NetworkManager-dispatcher.service, run-credentials-systemd\x2dtmpfiles\x2dresetup.service.mount, sysinit-reactivation.target, systemd-tmpfiles-resetup.service
+reloading the following units: dbus.service
+restarting the following units: polkit.service, systemd-udevd.service
+starting the following units: accounts-daemon.service
+the following new units were started: NetworkManager-dispatcher.service, run-credentials-systemd\x2dtmpfiles\x2dresetup.service.mount, run-user-1000-gvfs.mount, sysinit-reactivation.target, systemd-timedated.service, systemd-tmpfiles-resetup.service
