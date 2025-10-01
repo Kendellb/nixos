@@ -80,6 +80,7 @@
     pkgs.vlc
     pkgs.zathura
     pkgs.dunst
+    pkgs.autorandr
 
     # Fonts
     pkgs.inconsolata-nerdfont
@@ -178,6 +179,57 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  #autorandr display settings
+  programs.autorandr = {
+    enable = true;
+    profiles = {
+      "Desktop" = {
+        fingerprint = {
+          DP2 = "00ffffffffffff0005e30124350d0300
+                        2c1e0104a5341d783b1e61a855529b25
+                        115054bfef00d1c081803168317c4568
+                        457c6168617c023a801871382d40582c
+                        450009252100001efc7e808870381240
+                        1820350009252100001e000000fc0032
+                        3447315747340a2020202020000000fd
+                        003090a0a021010a2020202020200129
+                        020328f14c0103051404131f12021190
+                        3f230907078301000065030c00100068
+                        1a00000101309000866f80a070384040
+                        3020350009252100001efe5b80a07038
+                        35403020350009252100001e011d0072
+                        51d01e206e28550009252100001e7c2e
+                        90a0601a1e403020360009252100001a
+                        0000000000000000000000000000002a";
+          DVI1 = "00ffffffffffff0010ac2640564e4547
+                         2611010380261e78eea2a5a3574c9d25
+                         115054a54b00714f8180010101010101
+                         010101010101302a009851002a403070
+                         1300782d1100001e000000ff00465031
+                         383237394c47454e560a000000fc0044
+                         454c4c203139303846500a20000000fd
+                         00384c1e510e000a202020202020009d";
+        };
+        config = {
+          DP2 = {
+            enable = true;
+            primary = true;
+            #position = "0x0";
+            mode = "1920x1080";
+            rate = "144.00";
+          };
+          DVI1 = {
+            enable = true;
+            crtc = 1;
+            mode = "1024x1280";
+            rotate = "left";
+            rate = "60.00";
+          };
+        };
+      };
+    };
+  };
 
   programs.git = {
     enable = true;
